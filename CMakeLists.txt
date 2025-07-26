@@ -39,6 +39,16 @@ endif()
 # Add your sources to the target
 target_sources(${EXECUTABLE_NAME} 
 PRIVATE 
+    src/testgputext/SDL_math3d.h
+    src/testgputext/shaders/shader.frag.dxil.h
+    src/testgputext/shaders/shader.vert.dxil.h
+    src/testgputext/shaders/shader.frag.spv.h
+    src/testgputext/shaders/shader.vert.spv.h
+    src/testgputext/shaders/shader.frag.msl.h
+    src/testgputext/shaders/shader.vert.msl.h
+    src/testgputext/shaders/shader-sdf.frag.dxil.h
+    src/testgputext/shaders/shader-sdf.frag.spv.h
+    src/testgputext/shaders/shader-sdf.frag.msl.h
     src/main.cpp
     src/iosLaunchScreen.storyboard
 )
