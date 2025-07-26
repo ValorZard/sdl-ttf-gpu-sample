@@ -8,6 +8,8 @@
 #include <filesystem>
 #include <string_view>
 #include <thread>
+#include <stdio.h>
+#include <string>
 
 // Shaders
 #include "testgputext/shaders/shader-sdf.frag.dxil.h"
@@ -288,10 +290,10 @@ int main(int argc, char *argv[]) {
     return SDL_Fail();
   }
   const std::filesystem::path basePath = basePathPtr;
+  std::string font_filename_str = basePath.string() + "Inter-VariableFont.ttf";
+  SDL_Log("Using font %s", font_filename_str.c_str());
+  const char *font_filename = font_filename_str.c_str();
 
-  const auto fontPath = basePath / "Inter-VariableFont.ttf";
-
-  const char *font_filename = fontPath.string().c_str();
   bool use_SDF = false;
 
   check_error_bool(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS));
